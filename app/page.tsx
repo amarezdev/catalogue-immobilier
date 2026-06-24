@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { Catalogue } from "@/components/Catalogue";
 import { properties } from "@/lib/data";
 import { SITE } from "@/lib/config";
+import { asset } from "@/lib/asset";
 
 export default function HomePage() {
   return (
@@ -13,7 +14,7 @@ export default function HomePage() {
         <section className="relative mt-4 overflow-hidden rounded-2xl">
           <div className="relative h-[320px] w-full sm:h-[420px]">
             <Image
-              src="/images/hero.jpg"
+              src={asset("/images/hero.jpg")}
               alt={SITE.name}
               fill
               priority

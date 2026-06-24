@@ -1,4 +1,5 @@
 import type { Property, PropertyType } from "./types";
+import { asset } from "./asset";
 
 /**
  * Banques d'images thématiques, servies en local depuis `public/images`.
@@ -39,9 +40,8 @@ const IMAGE_POOLS: Record<PropertyType, string[]> = {
  */
 function imgs(type: PropertyType, variant = 0, count = 4): string[] {
   const pool = IMAGE_POOLS[type];
-  return Array.from(
-    { length: Math.min(count, pool.length) },
-    (_, i) => pool[(variant + i) % pool.length],
+  return Array.from({ length: Math.min(count, pool.length) }, (_, i) =>
+    asset(pool[(variant + i) % pool.length]),
   );
 }
 
